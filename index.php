@@ -1,7 +1,5 @@
 <?php
-
 session_start();
-
 require_once './classes/conexao.php';
 require_once './classes/login.php';
 
@@ -14,12 +12,11 @@ if (isset($_POST['Entrar'])):
     $f->setSenha(md5($senha));
     
     if ($f->logar()):
-        header('Location: http://www.sadbsi.com.br/logado.php');
+        header('Location: logado.php');
     else:
-         $erro ="";
+         $erro ="Erro ao logar!";
     endif;
-endif;
- ?>
+endif;   ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -28,8 +25,8 @@ endif;
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Sistema de Apoio a DependÃªncia">
-  <title>SAD - Sistema de Apoio Ã  Dependencia</title>
+  <meta name="description" content="Sistema de Apoio a Dependência">
+  <title>SAD - Sistema de Apoio à Dependencia</title>
   <script>
             //MASCARAMENTO
             function formatar(mascara, documento) {
@@ -44,6 +41,11 @@ endif;
   <!-- Bootstrap core CSS -->
   <link href="./css/bootstrap.css" rel="stylesheet">
   <link href="./css/style.css" rel="stylesheet">
+  
+   <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
 </head>
 
 <body>
@@ -60,7 +62,7 @@ endif;
     <div class="container">
       <div class="row">
         <div id="apresentacao" class="col-xs-12 col-sm-8 col-md-9">
-          <h3><p>Aqui serÃ¡ o espaÃ§o de apresentaÃ§Ã£o do sistema</p></h3>
+          <h3><p><marquee BEHAVIOR="ALTERNATE" direction="right" widht="100" height="90" scrollamount="10" ><font size="3" COLOR="#A9A9A9">SAD - Sistema Acadêmico</font></marquee></p></h3>
         </div>
         
         <div id="form_login" class="col-xs-12 col-sm-4 col-md-3">
@@ -95,11 +97,11 @@ endif;
     <div class="container">
       <div class="row">
         <div class="col-xs-12 col-sm-3 col-md-6">
-          <h5><p>Sad - Sistema de Apoio Ã  DependÃªncia<br />Fone: (61) 0000-0000 Fax: (61) 0000-0000<br />Taguatinga-DF</p></h5>
+          <h5><p>Sad - Sistema de Apoio à Dependência<br />Fone: (61) 0000-0000 Fax: (61) 0000-0000<br />Taguatinga-DF</p></h5>
         </div>
 
-        <div id="logoFooter" class="col-xs-13 col-sm-3 col-md-3 col-md-offset-3 col-md-3">
-          <img src="img/Sad_logo.png" border="0"  width="200" height="150"/>
+        <div id="logoFooter" class="col-xs-12 col-sm-6 col-md-6 col-md-offset-6 col-md-3">
+          <img src="img/Sad_logo.png" border="0"  width="130" height="110"/>
         </div>
       </div>
     </div>
@@ -114,7 +116,6 @@ endif;
       </div>
     </div>
   </div>
-
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
